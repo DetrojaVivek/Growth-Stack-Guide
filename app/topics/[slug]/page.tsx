@@ -39,6 +39,58 @@ const iconMap: Record<string, React.ElementType> = {
   Target,
 };
 
+const topicBanners: Record<
+  string,
+  {
+    badge: string;
+    title: string;
+    description: string;
+    ctaText: string;
+    ctaUrl: string;
+  }
+> = {
+  'ai-productivity': {
+    badge: 'Free Prompt Vault & Swipe File',
+    title: 'Get the 50 Field-Tested AI Prompts for Creators & Solopreneurs',
+    description:
+      'Stop using generic one-line prompts that produce robotic copy. Copy 50 structured, multi-turn prompt chains with role priming, voice constraints, and output rubrics for Claude and ChatGPT.',
+    ctaText: 'Get Free AI Prompt Vault',
+    ctaUrl: '/resources/50-ai-prompt-vault-swipe-file/',
+  },
+  'notion-systems': {
+    badge: 'Free Notion Workspace',
+    title: 'Get the Turnkey Notion Workspace Architecture',
+    description:
+      'Master relational databases, habit tracking formulas, and minimal workspace architecture without cognitive fatigue or cluttered nested pages.',
+    ctaText: 'Get Free Notion System',
+    ctaUrl: '/resources/ai-creator-productivity-kit/',
+  },
+  'freelancer-systems': {
+    badge: 'Pre-Built Notion Architecture',
+    title: 'Get the Pre-Configured Notion Follow-Up Pipeline',
+    description:
+      'Don\'t build from scratch. Our Freelancer Follow-Up Tracker includes an automated Formula 2.0 urgency radar, a 5-second lead capture dock, and 3 battle-tested follow-up swipe scripts.',
+    ctaText: 'Get Free Follow-Up Tracker',
+    ctaUrl: '/resources/ai-creator-productivity-kit/',
+  },
+  'solopreneur-operations': {
+    badge: 'Free Sunday SOP Checklist',
+    title: 'Get the Solopreneur Weekly Review Operating Checklist',
+    description:
+      'A repeatable 45-minute Sunday ritual SOP to clear backlogs, audit financial inputs, and plan high-impact sprints with zero Monday decision fatigue.',
+    ctaText: 'Get Free Weekly Checklist',
+    ctaUrl: '/resources/solopreneur-weekly-review-checklist/',
+  },
+  'software-guides': {
+    badge: 'Unbiased Software Reviews',
+    title: 'Explore Our Verified Software Decision Matrices',
+    description:
+      'Compare pricing tiers, limitations, and operational trade-offs for solo business software without vendor marketing spin or sponsored bias.',
+    ctaText: 'Browse Verified Software',
+    ctaUrl: '/tools/',
+  },
+};
+
 export async function generateStaticParams() {
   const pillars = getAllTopicPillars();
   return pillars.map((pillar) => ({
@@ -75,6 +127,7 @@ export default function TopicHubPage({ params }: TopicPageProps) {
   const relatedProducts = getProductsByCategory(pillar.slug);
   const relatedTools = getToolsByCategory(pillar.slug);
   const IconComponent = iconMap[pillar.iconName] || Brain;
+  const banner = topicBanners[pillar.slug] || topicBanners['ai-productivity'];
 
   return (
     <div className="w-full py-10 sm:py-16 lg:py-20 bg-[var(--bg-main)]">
@@ -95,38 +148,56 @@ export default function TopicHubPage({ params }: TopicPageProps) {
 
         {/* Hero Section */}
         <header className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-white border border-[var(--border-color)] shadow-[var(--shadow-sm)] space-y-6 text-left">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div
-                className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-xs"
-                style={{ backgroundColor: pillar.accentBg, color: pillar.accentColor }}
-              >
-                <IconComponent className="w-7 h-7 sm:w-8 sm:h-8" />
-              </div>
-              <div className="space-y-1">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className={`space-y-4 ${pillar.coverImage ? 'lg:col-span-7' : 'lg:col-span-12'}`}>
+              <div className="flex flex-wrap items-center gap-2.5">
+                <div
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-xs"
+                  style={{ backgroundColor: pillar.accentBg, color: pillar.accentColor }}
+                >
+                  <IconComponent className="w-6 h-6" />
+                </div>
                 <span
-                  className="text-xs font-bold uppercase tracking-wider block"
-                  style={{ color: pillar.accentColor }}
+                  className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-xs"
+                  style={{ backgroundColor: pillar.accentBg, color: pillar.accentColor }}
                 >
                   {pillar.badge}
                 </span>
-                <h1 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[var(--text-dark)] tracking-tight">
-                  {pillar.title}
-                </h1>
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#FAF8F2] text-[var(--text-muted)] border border-[var(--border-color)]">
+                  {pillar.blueprintCount}
+                </span>
               </div>
+
+              <h1 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[var(--text-dark)] tracking-tight leading-tight">
+                {pillar.title}
+              </h1>
+
+              <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-color)] pt-4">
+                {pillar.longDescription}
+              </p>
             </div>
 
-            <span className="text-xs font-bold px-3 py-1.5 rounded-full bg-[#FAF8F2] text-[var(--text-muted)] border border-[var(--border-color)] flex-shrink-0">
-              {pillar.blueprintCount}
-            </span>
+            {pillar.coverImage && (
+              <div className="lg:col-span-5 relative aspect-[16/10] rounded-2xl overflow-hidden border border-[var(--border-color)] shadow-xs bg-[#F6F3EB]">
+                <picture>
+                  <source
+                    srcSet={pillar.coverImage.replace(/\.(png|jpg|jpeg)$/, '.webp')}
+                    type="image/webp"
+                  />
+                  <img
+                    src={pillar.coverImage}
+                    alt={pillar.title}
+                    width={640}
+                    height={400}
+                    className="w-full h-full object-cover"
+                  />
+                </picture>
+              </div>
+            )}
           </div>
 
-          <p className="text-sm sm:text-base text-[var(--text-muted)] leading-relaxed max-w-4xl border-t border-[var(--border-color)] pt-5">
-            {pillar.longDescription}
-          </p>
-
           {/* Standard Operating Procedures Breakdown */}
-          <div className="space-y-3 pt-2">
+          <div className="space-y-3 pt-4 border-t border-[var(--border-color)]">
             <span className="text-xs font-bold text-[var(--text-dark)] uppercase tracking-wider block">
               Core Systems &amp; Relational Architectures Covered:
             </span>
@@ -245,35 +316,48 @@ export default function TopicHubPage({ params }: TopicPageProps) {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {relatedTools.map((tool) => (
                 <div
                   key={tool.slug}
-                  className="p-5 rounded-2xl bg-white border border-[var(--border-color)] shadow-xs flex items-start justify-between gap-4"
+                  className="p-5 rounded-2xl bg-white border border-[var(--border-color)] shadow-xs flex flex-col justify-between gap-4"
                 >
-                  <div className="space-y-1">
-                    <h3 className="font-heading font-bold text-base text-[var(--text-dark)]">
-                      <Link href={`/tools/${tool.slug}/`} className="hover:text-[var(--purple-main)] transition-colors">
-                        {tool.name}
-                      </Link>
-                    </h3>
+                  <div className="space-y-2">
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="font-heading font-bold text-base text-[var(--text-dark)]">
+                        <Link href={`/tools/${tool.slug}/`} className="hover:text-[var(--purple-main)] transition-colors">
+                          {tool.name}
+                        </Link>
+                      </h3>
+                      <span className="text-[11px] font-semibold text-[var(--text-light)] px-2 py-0.5 rounded-full bg-[#FAF8F2] border border-[var(--border-color)] flex-shrink-0">
+                        {tool.pricingTier.split('(')[0].trim()}
+                      </span>
+                    </div>
                     <p className="text-xs text-[var(--text-muted)] leading-relaxed line-clamp-2">
                       {tool.tagline}
                     </p>
-                    <span className="text-[11px] font-semibold text-[var(--text-light)] block pt-1">
-                      {tool.pricingTier}
-                    </span>
                   </div>
 
-                  <a
-                    href={tool.affiliateUrl}
-                    target="_blank"
-                    rel="sponsored noopener noreferrer"
-                    className="p-2.5 rounded-xl bg-[var(--bg-main)] hover:bg-[var(--primary-yellow)] hover:text-[var(--text-dark)] border border-[var(--border-color)] transition-colors flex-shrink-0"
-                    aria-label={`Visit ${tool.name}`}
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                  <div className="pt-3 border-t border-[var(--border-color)] flex items-center justify-between text-xs">
+                    <Link
+                      href={`/tools/${tool.slug}/`}
+                      className="font-bold text-[var(--text-dark)] hover:text-[var(--purple-main)] inline-flex items-center gap-1"
+                    >
+                      <span>Review Details</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+
+                    <a
+                      href={tool.affiliateUrl}
+                      target="_blank"
+                      rel="sponsored noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-bold text-[var(--purple-main)] hover:underline"
+                      aria-label={`Visit ${tool.name}`}
+                    >
+                      <span>Visit Tool</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
@@ -284,22 +368,22 @@ export default function TopicHubPage({ params }: TopicPageProps) {
         <section className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-r from-white to-[#FAF8F2] border border-[var(--border-color)] shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-left">
           <div className="space-y-2 max-w-2xl">
             <span className="text-xs font-bold text-[#10B981] uppercase tracking-wider block">
-              Pre-Built Notion Architecture
+              {banner.badge}
             </span>
             <h3 className="font-heading font-extrabold text-lg sm:text-2xl text-[var(--text-dark)]">
-              Get the Pre-Configured Notion Follow-Up Pipeline
+              {banner.title}
             </h3>
             <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-              Don&apos;t build from scratch. Our Freelancer Follow-Up Tracker includes an automated Formula 2.0 urgency radar, a 5-second lead capture dock, and 3 battle-tested follow-up swipe scripts.
+              {banner.description}
             </p>
           </div>
 
           <Link
-            href="/resources/ai-creator-productivity-kit/"
+            href={banner.ctaUrl}
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[var(--primary-yellow)] hover:bg-[var(--primary-yellow-hover)] text-[var(--text-dark)] font-bold text-xs sm:text-sm shadow-xs transition-colors flex-shrink-0"
           >
             <Download className="w-4 h-4" />
-            <span>Get Free Follow-Up Tracker</span>
+            <span>{banner.ctaText}</span>
           </Link>
         </section>
 

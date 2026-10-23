@@ -9,6 +9,7 @@ import {
   vsCrmMeta,
   solopreneurOsMeta,
   meetingNotesMeta,
+  overdueInvoiceMeta,
 } from '@/data/cornerstone-meta';
 
 // Code-split dynamic imports: each article's heavy JSX is isolated and only loaded on its specific page
@@ -18,6 +19,7 @@ const NotionFreelancerCrmArticle = dynamic(() => import('@/content/blog/notion-f
 const NotionVsCrmArticle = dynamic(() => import('@/content/blog/notion-vs-dedicated-crm'), { ssr: true });
 const SolopreneurOsArticle = dynamic(() => import('@/content/blog/solopreneur-operations-os'), { ssr: true });
 const MeetingNotesArticle = dynamic(() => import('@/content/blog/notion-ai-meeting-notes-action-items'), { ssr: true });
+const OverdueInvoiceArticle = dynamic(() => import('@/content/blog/freelance-overdue-invoice-email-scripts'), { ssr: true });
 
 export interface RegisteredArticle {
   Component: React.ComponentType;
@@ -31,6 +33,7 @@ export const BLOG_REGISTRY: Record<string, RegisteredArticle> = {
   'notion-vs-dedicated-crm': { Component: NotionVsCrmArticle, meta: vsCrmMeta },
   'solopreneur-operations-os': { Component: SolopreneurOsArticle, meta: solopreneurOsMeta },
   'notion-ai-meeting-notes-action-items': { Component: MeetingNotesArticle, meta: meetingNotesMeta },
+  'freelance-overdue-invoice-email-scripts': { Component: OverdueInvoiceArticle, meta: overdueInvoiceMeta },
   // Aliases for legacy guide slugs to ensure zero 404 broken routes
   'freelance-client-onboarding-portal-guide': { Component: ClientOnboardingArticle, meta: { ...onboardingMeta, slug: 'freelance-client-onboarding-portal-guide' } },
   'the-50-ai-prompt-vault-for-creators': { Component: AiWeeklyPlanningArticle, meta: { ...weeklyPlanningMeta, slug: 'the-50-ai-prompt-vault-for-creators' } },

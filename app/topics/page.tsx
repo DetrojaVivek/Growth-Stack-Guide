@@ -2,7 +2,9 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllTopicPillars } from '@/lib/topics';
-import { Brain, Zap, PenTool, Briefcase, Target, ArrowRight, Sparkles } from 'lucide-react';
+import { getAllArticles } from '@/lib/content';
+import BlogCard from '@/components/BlogCard';
+import { Brain, Zap, PenTool, Briefcase, Target, ArrowRight, Sparkles, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Knowledge Pillars & System Categories',
@@ -25,10 +27,11 @@ const iconMap: Record<string, React.ElementType> = {
 
 export default function TopicsIndexPage() {
   const pillars = getAllTopicPillars();
+  const allArticles = getAllArticles();
 
   return (
     <div className="w-full py-10 sm:py-16 lg:py-20 bg-[var(--bg-main)]">
-      <div className="container-custom max-w-7xl mx-auto px-4 sm:px-6 space-y-10 sm:space-y-14">
+      <div className="container-custom max-w-7xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
         
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-semibold text-[var(--text-muted)] text-left">
@@ -61,46 +64,97 @@ export default function TopicsIndexPage() {
               <Link
                 key={pillar.slug}
                 href={`/topics/${pillar.slug}/`}
-                className="group flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-white border border-[var(--border-color)] hover:border-[var(--purple-main)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all transform hover:-translate-y-1 text-left"
+                className="group flex flex-col justify-between rounded-3xl bg-white border border-[var(--border-color)] hover:border-[var(--purple-main)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all transform hover:-translate-y-1 text-left overflow-hidden"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-xs"
-                      style={{ backgroundColor: pillar.accentBg, color: pillar.accentColor }}
-                    >
-                      <IconComponent className="w-6 h-6" />
+                {pillar.coverImage && (
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#F6F3EB] border-b border-[var(--border-color)]">
+                    <picture>
+                      <source
+                        srcSet={pillar.coverImage.replace(/\.(png|jpg|jpeg)$/, '.webp')}
+                        type="image/webp"
+                      />
+                      <img
+                        src={pillar.coverImage}
+                        alt={pillar.title}
+                        width={600}
+                        height={338}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </picture>
+                    <div className="absolute top-3 left-3">
+                      <span
+                        className="text-[11px] font-bold px-2.5 py-1 rounded-full shadow-xs uppercase tracking-wider backdrop-blur-xs border border-white/40"
+                        style={{ backgroundColor: pillar.accentBg, color: pillar.accentColor }}
+                      >
+                        {pillar.badge}
+                      </span>
                     </div>
-                    <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#FAF8F2] text-[var(--text-muted)] border border-[var(--border-color)]">
-                      {pillar.blueprintCount}
-                    </span>
+                  </div>
+                )}
+
+                <div className="p-6 sm:p-7 space-y-4 flex-1 flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center shadow-xs"
+                        style={{ backgroundColor: pillar.accentBg, color: pillar.accentColor }}
+                      >
+                        <IconComponent className="w-5 h-5" />
+                      </div>
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#FAF8F2] text-[var(--text-muted)] border border-[var(--border-color)]">
+                        {pillar.blueprintCount}
+                      </span>
+                    </div>
+
+                    <div>
+                      <h2 className="font-heading font-bold text-lg sm:text-xl text-[var(--text-dark)] group-hover:text-[var(--purple-main)] transition-colors mt-1">
+                        {pillar.title}
+                      </h2>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+                      {pillar.description}
+                    </p>
                   </div>
 
-                  <div>
-                    <span
-                      className="text-[11px] font-bold uppercase tracking-wider block"
-                      style={{ color: pillar.accentColor }}
-                    >
-                      {pillar.badge}
-                    </span>
-                    <h2 className="font-heading font-bold text-lg sm:text-xl text-[var(--text-dark)] group-hover:text-[var(--purple-main)] transition-colors mt-1">
-                      {pillar.title}
-                    </h2>
+                  <div className="pt-4 border-t border-[var(--border-color)] flex items-center justify-between text-xs font-bold text-[var(--purple-main)]">
+                    <span>Explore Pillar Hub</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
-
-                  <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
-
-                <div className="pt-6 mt-4 border-t border-[var(--border-color)] flex items-center justify-between text-xs font-bold text-[var(--purple-main)]">
-                  <span>Explore Pillar Hub</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
             );
           })}
         </div>
+
+        {/* Featured Blueprints Across Knowledge Pillars */}
+        <section className="space-y-6 text-left pt-6 border-t border-[var(--border-color)]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--purple-main)] uppercase tracking-wider">
+                <BookOpen className="w-4 h-4" />
+                <span>Featured Pillar Blueprints</span>
+              </div>
+              <h2 className="font-heading font-extrabold text-xl sm:text-3xl text-[var(--text-dark)]">
+                Latest Operational Guides Across All Pillars
+              </h2>
+            </div>
+            <Link
+              href="/blog/"
+              className="text-xs sm:text-sm font-bold text-[var(--purple-main)] hover:underline inline-flex items-center gap-1 self-start sm:self-auto"
+            >
+              <span>View All Master Guides</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allArticles.slice(0, 6).map((article) => (
+              <BlogCard key={article.slug} article={article.frontmatter} />
+            ))}
+          </div>
+        </section>
 
       </div>
     </div>

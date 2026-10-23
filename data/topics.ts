@@ -6,10 +6,11 @@ export const TOPIC_PILLARS: Record<TopicPillarSlug, TopicPillar> = {
     title: 'AI Productivity Systems',
     categoryName: 'AI Productivity',
     badge: 'AI Automation Hub',
-    blueprintCount: '12+ Systems',
+    blueprintCount: '3 Master Systems • 50+ Prompts',
     accentColor: '#3B9EFF',
     accentBg: '#EBF5FF',
     iconName: 'Zap',
+    coverImage: '/images/guides/ai-weekly-planning-sprint-claude-chatgpt.jpg',
     description:
       'Field-tested prompt chains, autonomous workflow automations, and weekly planning systems that eliminate administrative overhead.',
     longDescription:
@@ -36,6 +37,11 @@ export const TOPIC_PILLARS: Record<TopicPillarSlug, TopicPillar> = {
         answer:
           'No. Every prompt chain in our 50+ Prompt Vault can be executed in the free web interfaces of ChatGPT or Claude.',
       },
+      {
+        question: 'Can I use these AI prompt chains for client deliverables?',
+        answer:
+          'Yes. However, we advocate using AI strictly for first-draft generation, structure outlines, and transcript synthesis. Always conduct manual editorial review and fact-checking before delivering work to clients.',
+      },
     ],
   },
   'notion-systems': {
@@ -47,6 +53,7 @@ export const TOPIC_PILLARS: Record<TopicPillarSlug, TopicPillar> = {
     accentColor: '#6C4DFF',
     accentBg: '#F3F0FF',
     iconName: 'Brain',
+    coverImage: '/images/guides/minimal-5-property-notion-freelancer-crm.jpg',
     description:
       'Turn chaotic digital notes into an interconnected Second Brain. Master relational databases, habit tracking formulas, and minimal workspace architecture.',
     longDescription:
@@ -80,15 +87,17 @@ export const TOPIC_PILLARS: Record<TopicPillarSlug, TopicPillar> = {
     title: 'Freelancer Business Systems',
     categoryName: 'Freelance Ops',
     badge: 'Client Ops Hub',
-    blueprintCount: '8+ Kits',
+    blueprintCount: '9+ Kits',
     accentColor: '#4F46E5',
     accentBg: '#EEF2FF',
     iconName: 'Briefcase',
+    coverImage: '/images/guides/freelance-overdue-invoice-recovery-dashboard.jpg',
     description:
       'Client onboarding portals, plain-English contract agreements, scope boundary protection, and milestone invoice ledgers. Prevent scope creep and eliminate payment delays.',
     longDescription:
       'Freelancers frequently suffer from administrative chaos: lost project agreements, scattered client emails, and delayed invoice payments. Our Freelancer CRM frameworks equip solo service providers with professional, shareable Notion client portals. Keep deliverables transparent, establish crystal-clear scope boundaries, and track payments without paying $50/month for heavy CRM software.',
     systemSOPs: [
+      'Overdue Invoice Recovery: 4-Stage Email Escalation Protocol',
       '1-Page Client Portal: Shareable Notion Workspace for Deliverables',
       'Scope Creep Prevention SOP: Defining Boundaries in Plain English',
       'Milestone & Invoice Ledger: Automated Payment Reminders & Logging',
@@ -116,6 +125,7 @@ export const TOPIC_PILLARS: Record<TopicPillarSlug, TopicPillar> = {
     accentColor: '#D97706',
     accentBg: '#FEF3C7',
     iconName: 'Target',
+    coverImage: '/images/guides/solopreneur-operations-system-dashboard.jpg',
     description:
       'Lean business operating systems for solo digital operators. Sunday weekly review rituals, revenue projection models, and high-impact quarterly OKRs.',
     longDescription:
@@ -148,6 +158,7 @@ export const TOPIC_PILLARS: Record<TopicPillarSlug, TopicPillar> = {
     accentColor: '#10B981',
     accentBg: '#EBFBEE',
     iconName: 'PenTool',
+    coverImage: '/images/guides/notion-vs-dedicated-crm-comparison-matrix.jpg',
     description:
       'Unbiased, hands-on software evaluations and decision matrices for solo operators. Verified pricing timestamps, honest limitations, and zero sponsor bias.',
     longDescription:

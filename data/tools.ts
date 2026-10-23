@@ -197,5 +197,20 @@ export function getToolBySlug(slug: string): ToolItem | null {
 }
 
 export function getToolsByCategory(categorySlug: string): ToolItem[] {
+  if (categorySlug === 'ai-productivity') {
+    return TOOLS.filter((t) => ['claude', 'chatgpt', 'make'].includes(t.slug));
+  }
+  if (categorySlug === 'notion-systems') {
+    return TOOLS.filter((t) => ['notion', 'make'].includes(t.slug));
+  }
+  if (categorySlug === 'freelancer-systems') {
+    return TOOLS.filter((t) => ['notion', 'kit'].includes(t.slug));
+  }
+  if (categorySlug === 'solopreneur-operations') {
+    return TOOLS.filter((t) => ['notion', 'claude', 'kit'].includes(t.slug));
+  }
+  if (categorySlug === 'software-guides') {
+    return TOOLS;
+  }
   return TOOLS.filter((t) => t.categorySlug === categorySlug);
 }

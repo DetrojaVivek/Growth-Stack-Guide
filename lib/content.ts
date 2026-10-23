@@ -46,7 +46,10 @@ export function getAllArticles(): Article[] {
     }
   }
 
-  return combined;
+  // Sort by date descending (newest first)
+  return combined.sort(
+    (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
+  );
 }
 
 export async function getArticleBySlug(slug: string): Promise<Article | null> {

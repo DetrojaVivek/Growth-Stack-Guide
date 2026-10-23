@@ -190,6 +190,7 @@ export interface TopicPillar {
   accentBg: string;
   badge: string;
   blueprintCount: string;
+  coverImage?: string;
   systemSOPs: string[];
   faqs: Array<{ question: string; answer: string }>;
 }

@@ -144,6 +144,30 @@ export const meetingNotesMeta: BlogPostMeta = {
   relatedResources: ['50-ai-prompt-vault-swipe-file'],
 };
 
+export const overdueInvoiceMeta: BlogPostMeta = {
+  slug: 'freelance-overdue-invoice-email-scripts',
+  title: 'How Freelancers Collect Overdue Invoices: 4 Email Scripts That Get Paid Fast',
+  description:
+    'Stop sending weak "just checking in" emails. Copy the exact 4-stage overdue invoice email sequence solo freelancers use to recover unpaid client bills in 48 hours.',
+  date: '2026-10-23',
+  updatedAt: '2026-10-23',
+  author: 'Vivek',
+  category: 'freelancer-systems',
+  tags: ['overdue-invoices', 'freelance-billing', 'payment-collection', 'freelance-contracts', 'client-ops', 'email-scripts'],
+  targetAudience: 'both',
+  problemSolved:
+    'Freelancers feel uncomfortable chasing unpaid invoices, resulting in late payments, cash flow stress, and awkward client confrontations.',
+  intentLevel: 'implementation',
+  depthLevel: 4,
+  originalValueElements: ['framework', 'checklist', 'decision-tree', 'practical-example'],
+  qualityScore: 99,
+  featuredImage: '/images/guides/freelance-overdue-invoice-recovery-dashboard.jpg',
+  readingTime: 8,
+  contentType: 'blog',
+  relatedProducts: ['client-kickoff-kit'],
+  relatedResources: ['ai-creator-productivity-kit'],
+};
+
 export const CORNERSTONE_ARTICLES_META: BlogPostMeta[] = [
   onboardingMeta,
   weeklyPlanningMeta,
@@ -151,4 +175,6 @@ export const CORNERSTONE_ARTICLES_META: BlogPostMeta[] = [
   vsCrmMeta,
   solopreneurOsMeta,
   meetingNotesMeta,
+  overdueInvoiceMeta,
 ];
+
