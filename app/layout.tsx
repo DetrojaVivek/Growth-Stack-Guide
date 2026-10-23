@@ -47,6 +47,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+    other: {
+      'p:domain_verify': '45f8a4001b44ef59618dfd8523bb46a0',
+    },
   },
   icons: {
     icon: [
@@ -84,6 +87,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/images/brand/favicon.ico" sizes="any" />
         <link rel="icon" href="/images/brand/favicon.png" type="image/png" />
+        <meta name="p:domain_verify" content="45f8a4001b44ef59618dfd8523bb46a0" />
       </head>
       <body className="min-h-screen bg-[var(--bg-main)] text-[var(--text-dark)] antialiased font-sans flex flex-col">
         {/* Google Analytics 4 Script */}
