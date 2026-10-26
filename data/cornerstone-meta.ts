@@ -168,6 +168,37 @@ export const overdueInvoiceMeta: BlogPostMeta = {
   relatedResources: ['ai-creator-productivity-kit'],
 };
 
+export const clientRecoveryMeta: BlogPostMeta = {
+  slug: 'freelance-client-recovery-system-30-days',
+  title: 'How Freelancers Replace a Lost Client Roster in 30 Days (Without Cold Spam or Cheap Job Boards)',
+  description:
+    'A battle-tested 4-week pipeline for solo freelancers to rebuild a full client roster in 30 days using warm reactivations, agency overflow, and permission-first outreach.',
+  date: '2026-10-26',
+  updatedAt: '2026-10-26',
+  author: 'Vivek',
+  category: 'freelancer-systems',
+  tags: [
+    'freelance-clients',
+    'client-acquisition',
+    'cold-outreach',
+    'agency-partnerships',
+    'freelance-pipeline',
+    'freelance-sales',
+  ],
+  targetAudience: 'freelancer',
+  problemSolved:
+    'The sudden loss of freelance clients creates panic, leading to desperate cold spam or low-paying bidding wars on platform marketplaces.',
+  intentLevel: 'implementation',
+  depthLevel: 5,
+  originalValueElements: ['framework', 'checklist', 'decision-tree', 'practical-example'],
+  qualityScore: 99,
+  featuredImage: '/images/guides/freelance-client-recovery-system-30-days.jpg',
+  readingTime: 9,
+  contentType: 'blog',
+  relatedProducts: ['client-pulse', 'client-kickoff-kit'],
+  relatedResources: ['ai-creator-productivity-kit'],
+};
+
 export const CORNERSTONE_ARTICLES_META: BlogPostMeta[] = [
   onboardingMeta,
   weeklyPlanningMeta,
@@ -176,5 +207,7 @@ export const CORNERSTONE_ARTICLES_META: BlogPostMeta[] = [
   solopreneurOsMeta,
   meetingNotesMeta,
   overdueInvoiceMeta,
+  clientRecoveryMeta,
 ];
+
 
