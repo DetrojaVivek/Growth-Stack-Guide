@@ -54,7 +54,7 @@ export default function NotionAiMeetingNotesArticle() {
           'Fathom provides unlimited free recordings and transcripts, but caps advanced AI summaries at 5 calls per month—bypassing this is easy by feeding the free transcript into Claude 3.5 Sonnet for $0.',
           'Verbal agreements made on video calls cause over 80% of freelance scope creep unless confirmed in writing within 24 hours.',
           'Notion has a native "Turn into → Page in" shortcut and drag-and-drop board mechanics that convert raw markdown checkboxes into database cards in under 10 seconds.',
-          'In US Two-Party Consent states, always disclose AI recording in advance using a standard 1-sentence booking disclaimer.',
+          'In US all-party consent states, secure client recording permission in advance via an automated booking disclosure or verbal opt-in.',
         ]}
       />
 
@@ -99,20 +99,30 @@ export default function NotionAiMeetingNotesArticle() {
       </section>
 
       {/* Section 2: US Legal & Consent Callout */}
-      <Callout type="warning" title="US Compliance: The 10-Second Recording Consent Rule">
+      <Callout type="warning" title="Recording Client Meetings: Consent & Privacy Protocols for U.S. Freelancers">
         <p className="text-xs sm:text-sm text-[var(--text-dark)] leading-relaxed">
-          More than 11 US states (including California, Florida, Illinois, Pennsylvania, and Washington) enforce <strong>Two-Party Consent wiretapping statutes</strong>. Recording a commercial video call without clear notice can lead to serious compliance disputes.
+          Recording and transcribing client strategy sessions requires strict adherence to U.S. eavesdropping and wiretapping laws. While federal statute (18 U.S.C. § 2511) follows single-party consent, at least 11 states—including <strong>California, Florida, Illinois, Pennsylvania, Massachusetts, and Washington</strong>—enforce <strong>all-party (two-party) consent statutes</strong>. In these jurisdictions, every call participant must explicitly agree to the recording before or at the start of the meeting.
         </p>
-        <div className="mt-3 p-3.5 bg-white rounded-xl border border-amber-300 text-xs text-[var(--text-dark)] space-y-2.5">
-          <strong>The Frictionless Booking Disclaimer:</strong>
-          <p className="italic text-[var(--text-muted)]">
-            Add this line to your Calendly, Cal.com, or booking confirmation email:
-          </p>
-          <div className="p-2.5 bg-amber-50 rounded-lg font-mono text-[11px] text-amber-950 border border-amber-200">
-            &ldquo;Note: Project sync calls are transcribed by Fathom to ensure all agreements, feedback, and action items are accurately documented.&rdquo;
+        <div className="mt-3 p-3.5 bg-white rounded-xl border border-amber-300 text-xs text-[var(--text-dark)] space-y-3">
+          <div>
+            <strong className="block text-[var(--text-dark)] mb-1">Method 1: The Frictionless Intake Disclosure (Standard SOP)</strong>
+            <p className="text-[11px] text-[var(--text-muted)] mb-1.5">
+              Secure documented consent ahead of time by adding this single notice to your Calendly, Cal.com, or booking confirmation email:
+            </p>
+            <div className="p-2.5 bg-amber-50 rounded-lg font-mono text-[11px] text-amber-950 border border-amber-200">
+              &ldquo;Notice on Meeting Documentation: To ensure every project decision, feedback note, and deliverable is captured with 100% accuracy, our strategy calls are transcribed by an automated AI assistant. By scheduling, you confirm your consent to meeting transcription.&rdquo;
+            </div>
           </div>
-          <p className="text-[11px] text-[var(--text-muted)] leading-relaxed">
-            If jumping on an unscheduled ad-hoc call, use this 10-second verbal opener: <em>&ldquo;Hey [Client], I have an AI note-taker running so I can focus 100% of my attention on your strategy rather than looking down to type. Let me know if that works for you!&rdquo;</em> (99% of US clients appreciate this professional attention).
+
+          <div>
+            <strong className="block text-[var(--text-dark)] mb-1">Method 2: The Ad-Hoc Call Courtesy Check (Psychological Framing)</strong>
+            <p className="text-[11px] text-[var(--text-muted)] leading-relaxed">
+              For unscheduled calls, frame transcription around client benefit before activating your recording bot: <em>&ldquo;Hey [Client], I use an AI note-taker so I can focus entirely on your strategy instead of looking down to scribble notes. Are you comfortable with me recording our session for our project records?&rdquo;</em> If a client expresses hesitation, pause the bot immediately and record key points manually in Notion.
+            </p>
+          </div>
+
+          <p className="text-[10px] text-amber-900/80 pt-2 border-t border-amber-200/60 italic leading-normal">
+            Notice: This section outlines professional operational best practices, not formal legal counsel. State eavesdropping regulations vary; consult a licensed attorney for specific contract clauses and client service agreements.
           </p>
         </div>
       </Callout>
@@ -465,8 +475,8 @@ Transcript / Notes:
         title="The 5-Minute Post-Meeting Triage Checklist"
         items={[
           {
-            text: 'Verify Two-Party recording consent before or at the start of the call',
-            description: 'Use the 1-sentence booking disclaimer or 10-second verbal opener.',
+            text: 'Secure client recording consent before or at the start of the call',
+            description: 'Verify your booking disclaimer notice or secure explicit verbal opt-in before launching AI transcription.',
           },
           {
             text: 'Export raw meeting transcript from Fathom or Zoom recording',
