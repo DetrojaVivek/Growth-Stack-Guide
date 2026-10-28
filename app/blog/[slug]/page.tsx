@@ -17,7 +17,7 @@ import JsonLd from '@/components/JsonLd';
 import BlogCard from '@/components/BlogCard';
 import Callout from '@/components/Callout';
 import GuideRenderer from '@/components/guides/GuideRenderer';
-import { Clock, Calendar, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Clock, Calendar, ShieldCheck, ArrowRight, Info } from 'lucide-react';
 
 interface ArticlePageProps {
   params: {
@@ -209,6 +209,14 @@ export default async function BlogPostPage({ params }: ArticlePageProps) {
               <Calendar className="w-3.5 h-3.5 text-[var(--text-light)]" />
               <time dateTime={legacyArticle.frontmatter.date}>{legacyArticle.frontmatter.date}</time>
             </div>
+          </div>
+
+          {/* Inline FTC Editorial & Affiliate Disclosure */}
+          <div className="p-3.5 rounded-xl bg-[#F8F9FD] border border-[var(--border-color)] text-left flex items-start gap-2.5 text-xs text-[var(--text-muted)] mt-2">
+            <Info className="w-4 h-4 text-[var(--purple-main)] flex-shrink-0 mt-0.5" />
+            <p className="leading-relaxed text-[11px] sm:text-xs">
+              <strong className="text-[var(--text-dark)] font-semibold">Editorial Notice:</strong> When you purchase tools through our guides, we may earn an affiliate commission at zero additional cost to you. We only recommend workflows we actively verify. <Link href="/affiliate-disclosure/" className="text-[var(--purple-main)] underline hover:text-[var(--text-dark)] font-medium transition-colors">Full policy</Link>.
+            </p>
           </div>
         </header>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import type { BlogPostMeta } from '@/lib/types';
-import { Clock, Calendar, ShieldCheck } from 'lucide-react';
+import { Clock, Calendar, ShieldCheck, Info } from 'lucide-react';
 import { getTopicPillarBySlug } from '@/data/topics';
 
 interface ArticleHeaderProps {
@@ -91,6 +91,14 @@ export default function ArticleHeader({ meta }: ArticleHeaderProps) {
           <strong className="text-[var(--text-dark)] block">Operational Problem Solved:</strong>
           <span className="text-[var(--text-muted)] leading-relaxed">{meta.problemSolved}</span>
         </div>
+      </div>
+
+      {/* Inline FTC Editorial & Affiliate Disclosure */}
+      <div className="p-3.5 rounded-xl bg-[#F8F9FD] border border-[var(--border-color)] text-left flex items-start gap-2.5 text-xs text-[var(--text-muted)]">
+        <Info className="w-4 h-4 text-[var(--purple-main)] flex-shrink-0 mt-0.5" />
+        <p className="leading-relaxed text-[11px] sm:text-xs">
+          <strong className="text-[var(--text-dark)] font-semibold">Editorial Integrity &amp; Reader Support:</strong> Growth Stack Guide is supported by our readers. When you purchase tools or services through our links, we may earn an affiliate commission at zero additional cost to you. We strictly recommend software architectures and operational systems we have personally deployed and stress-tested. <Link href="/affiliate-disclosure/" className="text-[var(--purple-main)] underline hover:text-[var(--text-dark)] font-medium transition-colors">Read our full editorial policy</Link>.
+        </p>
       </div>
     </header>
   );
