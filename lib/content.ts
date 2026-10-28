@@ -1,6 +1,6 @@
 import { Article } from './types';
 import { getAllArticles as getAllTsxMetas } from './content-registry';
-import { getAllGuidesFromData, getGuideBySlugFromData } from '@/data/guides';
+import { getGuideBySlugFromData } from '@/data/guides';
 import { getTopicPillarBySlug } from '@/data/topics';
 
 export function ensureContentDirectoryExists(): void {
@@ -34,20 +34,8 @@ export function getAllArticles(): Article[] {
     };
   });
 
-  // 2. Fetch existing legacy guides from data/guides
-  const legacyGuides = getAllGuidesFromData();
-  const existingSlugs = new Set(tsxArticles.map((a) => a.slug));
-
-  // 3. Add legacy guides if their slug is not already present
-  const combined = [...tsxArticles];
-  for (const guide of legacyGuides) {
-    if (!existingSlugs.has(guide.slug)) {
-      combined.push(guide);
-    }
-  }
-
-  // Sort by date descending (newest first)
-  return combined.sort(
+  // Return canonical cornerstone blueprints sorted by date descending (newest first)
+  return tsxArticles.sort(
     (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
   );
 }

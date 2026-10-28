@@ -37,12 +37,6 @@ export const BLOG_REGISTRY: Record<string, RegisteredArticle> = {
   'notion-ai-meeting-notes-action-items': { Component: MeetingNotesArticle, meta: meetingNotesMeta },
   'freelance-overdue-invoice-email-scripts': { Component: OverdueInvoiceArticle, meta: overdueInvoiceMeta },
   'freelance-client-recovery-system-30-days': { Component: ClientRecoveryArticle, meta: clientRecoveryMeta },
-  // Aliases for legacy guide slugs to ensure zero 404 broken routes
-  'freelance-client-onboarding-portal-guide': { Component: ClientOnboardingArticle, meta: { ...onboardingMeta, slug: 'freelance-client-onboarding-portal-guide' } },
-  'the-50-ai-prompt-vault-for-creators': { Component: AiWeeklyPlanningArticle, meta: { ...weeklyPlanningMeta, slug: 'the-50-ai-prompt-vault-for-creators' } },
-  'how-to-build-a-notion-second-brain': { Component: NotionFreelancerCrmArticle, meta: { ...crmMeta, slug: 'how-to-build-a-notion-second-brain' } },
-  'multi-platform-content-calendar-batching-sop': { Component: SolopreneurOsArticle, meta: { ...solopreneurOsMeta, slug: 'multi-platform-content-calendar-batching-sop' } },
-  'solopreneur-weekly-review-operating-system': { Component: SolopreneurOsArticle, meta: { ...solopreneurOsMeta, slug: 'solopreneur-weekly-review-operating-system' } },
 };
 
 export function getAllArticles(): BlogPostMeta[] {
