@@ -40,9 +40,13 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   return {
     title: `${tool.name} Review (${tool.verifiedDate}) | Growth Stack Guide`,
     description: `Hands-on review of ${tool.name}. Verified pricing (${tool.pricingTier}), honest pros and limitations, and how we use it in solo workflows.`,
+    alternates: {
+      canonical: `/tools/${params.slug}/`,
+    },
     openGraph: {
       title: `${tool.name} Review & Verified Pricing | Growth Stack Guide`,
       description: tool.tagline,
+      url: `/tools/${params.slug}/`,
     },
   };
 }

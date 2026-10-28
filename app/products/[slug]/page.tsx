@@ -46,9 +46,13 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   return {
     title: `${product.title} (${product.priceDisplay}) | Growth Stack Guide`,
     description: product.description,
+    alternates: {
+      canonical: `/products/${params.slug}/`,
+    },
     openGraph: {
       title: `${product.title} — Official Notion System (${product.priceDisplay})`,
       description: product.description,
+      url: `/products/${params.slug}/`,
       images: [
         {
           url: product.coverImage,

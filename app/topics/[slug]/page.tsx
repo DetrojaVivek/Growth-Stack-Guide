@@ -109,9 +109,13 @@ export async function generateMetadata({ params }: TopicPageProps): Promise<Meta
   return {
     title: `${pillar.title} — Field-Tested Blueprints & SOPs | Growth Stack Guide`,
     description: pillar.description,
+    alternates: {
+      canonical: `/topics/${params.slug}/`,
+    },
     openGraph: {
       title: `${pillar.title} | Growth Stack Guide`,
       description: pillar.description,
+      url: `/topics/${params.slug}/`,
     },
   };
 }

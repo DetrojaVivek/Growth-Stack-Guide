@@ -43,9 +43,13 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     return {
       title: `${meta.title} | Growth Stack Guide`,
       description: meta.description,
+      alternates: {
+        canonical: `/blog/${params.slug}/`,
+      },
       openGraph: {
         title: meta.title,
         description: meta.description,
+        url: `/blog/${params.slug}/`,
         type: 'article',
         publishedTime: meta.date,
         modifiedTime: meta.updatedAt,
@@ -65,9 +69,13 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     return {
       title: `${legacyArticle.frontmatter.title} | Growth Stack Guide`,
       description: legacyArticle.frontmatter.description,
+      alternates: {
+        canonical: `/blog/${params.slug}/`,
+      },
       openGraph: {
         title: legacyArticle.frontmatter.title,
         description: legacyArticle.frontmatter.description,
+        url: `/blog/${params.slug}/`,
         type: 'article',
         publishedTime: legacyArticle.frontmatter.date,
         modifiedTime: legacyArticle.frontmatter.updated,

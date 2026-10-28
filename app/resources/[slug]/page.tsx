@@ -39,9 +39,13 @@ export async function generateMetadata({ params }: ResourcePageProps): Promise<M
   return {
     title: `${resource.title} | Growth Stack Guide`,
     description: resource.description,
+    alternates: {
+      canonical: `/resources/${params.slug}/`,
+    },
     openGraph: {
       title: `Free ${resource.title} | Growth Stack Guide`,
       description: resource.description,
+      url: `/resources/${params.slug}/`,
       images: [
         {
           url: resource.coverImage,
