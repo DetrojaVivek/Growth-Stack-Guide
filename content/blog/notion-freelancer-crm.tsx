@@ -137,7 +137,7 @@ export default function NotionFreelancerCrmArticle() {
         tagline="Lightweight freelancer CRM with an automated 14-day inactivity radar, client dossiers, and Zoom meeting decision logs."
         priceDisplay="$7 One-Time"
         productSlug="client-pulse"
-        gumroadUrl="https://growthstackhub1.gumroad.com/l/client-pulse-crm?wanted=true"
+        gumroadUrl="https://growthstackguide.gumroad.com/l/client-pulse-crm?wanted=true"
         features={[
           'Automated 14-Day Inactivity Radar (Formula 2.0 At-Risk alerts)',
           'Dedicated Client Relationship Dossiers (Timezones, channels, retainer $)',

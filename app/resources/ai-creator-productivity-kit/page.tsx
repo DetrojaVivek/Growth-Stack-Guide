@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 };
 
 // Configurable Gumroad Lead Magnet checkout URL ($0 Free Download)
-const GUMROAD_FREEBIE_URL = 'https://growthstackhub1.gumroad.com/l/freelancer-follow-up-tracker';
+const GUMROAD_FREEBIE_URL = 'https://growthstackguide.gumroad.com/l/freelancer-follow-up-tracker';
 
 // The 7 Delivered Core Pillars strictly matching 01_Tier0_Promises_Delivered.md with High-Curiosity Fascinations
 const deliveredPillars = [

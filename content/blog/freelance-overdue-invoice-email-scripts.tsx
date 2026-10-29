@@ -534,7 +534,7 @@ Accounts Management,
           </Link>
 
           <a
-            href="https://growthstackhub1.gumroad.com/l/freelancer-follow-up-tracker"
+            href="https://growthstackguide.gumroad.com/l/freelancer-follow-up-tracker"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[var(--primary-yellow)] hover:bg-[var(--primary-yellow-hover)] text-[var(--text-dark)] font-extrabold text-xs sm:text-sm shadow-sm hover:shadow transition-all"
@@ -784,7 +784,7 @@ Accounts Management,
         tagline="A turnkey Notion operating system pre-configured with client intake forms, automated milestone tracking, and contract scope defense clauses."
         priceDisplay="$19 One-Time"
         productSlug="client-kickoff-kit"
-        gumroadUrl="https://growthstackhub1.gumroad.com/l/client-kickoff-kit?wanted=true"
+        gumroadUrl="https://growthstackguide.gumroad.com/l/client-kickoff-kit?wanted=true"
         features={[
           'The Onboarding Command Center with 3 Filtered Views',
           '3 Contract Scope Creep & Late Payment Defense Boilerplate Clauses',

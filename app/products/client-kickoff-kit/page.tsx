@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 // Configurable Gumroad Checkout URL ($19 Lifetime Purchase)
-const GUMROAD_KICKOFF_KIT_URL = 'https://growthstackhub1.gumroad.com/l/client-kickoff-kit';
+const GUMROAD_KICKOFF_KIT_URL = 'https://growthstackguide.gumroad.com/l/client-kickoff-kit';
 
 // The Core Delivered Pillars strictly matching 03_Tier2_19Dollar_Solopreneur_Project_Revenue_Engine.md
 const deliveredPillars = [

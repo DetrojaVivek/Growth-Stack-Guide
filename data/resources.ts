@@ -19,7 +19,7 @@ export const RESOURCES: ResourceItem[] = [
       '5-Minute Client Hand-Off Protocol interactive checklist',
       '100% Free Forever on Notion personal tier • 100% Private in your workspace',
     ],
-    gumroadUrl: 'https://growthstackhub1.gumroad.com/l/freelancer-follow-up-tracker',
+    gumroadUrl: 'https://growthstackguide.gumroad.com/l/freelancer-follow-up-tracker',
     categorySlug: 'freelancer-systems',
     categoryName: 'Freelancer Business Systems',
     faqs: [
@@ -91,7 +91,7 @@ export const RESOURCES: ResourceItem[] = [
       '10 Research Synthesis & Long-Form Breakdown chains',
       '5 Daily Prioritization and Time-Blocking assistant prompts',
     ],
-    gumroadUrl: 'https://growthstackhub.gumroad.com/l/50-ai-prompt-vault',
+    gumroadUrl: 'https://growthstackguide.gumroad.com/l/50-ai-prompts-vault',
     categorySlug: 'ai-productivity',
     categoryName: 'AI Productivity Systems',
     faqs: [

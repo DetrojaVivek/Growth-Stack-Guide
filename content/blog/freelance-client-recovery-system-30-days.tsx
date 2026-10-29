@@ -391,7 +391,7 @@ Best,
         tagline="The lightweight, high-touch freelancer CRM in Notion that prevents client neglect, tracks Zoom agreements, and connects project milestones to relationship health."
         priceDisplay="$7"
         productSlug="client-pulse"
-        gumroadUrl="https://growthstackhub1.gumroad.com/l/client-pulse-crm"
+        gumroadUrl="https://growthstackguide.gumroad.com/l/client-pulse-crm"
         features={[
           'Automated 14-Day Inactivity Radar (Formula 2.0 At-Risk alerts)',
           'Dedicated Client Relationship Dossiers with channel preferences',
@@ -481,7 +481,7 @@ Best,
         tagline="A structured, repeatable onboarding workflow for solo service providers—with 3 niche intake questionnaires, scope defense clauses, and automated readiness verification."
         priceDisplay="$19"
         productSlug="client-kickoff-kit"
-        gumroadUrl="https://growthstackhub1.gumroad.com/l/client-kickoff-kit"
+        gumroadUrl="https://growthstackguide.gumroad.com/l/client-kickoff-kit"
         features={[
           'The Onboarding Command Center with Missing Assets Radar',
           'Automated Formula 2.0 Readiness Radar (blocks premature kickoffs)',

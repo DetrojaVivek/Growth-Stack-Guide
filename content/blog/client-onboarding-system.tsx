@@ -155,7 +155,7 @@ export default function ClientOnboardingArticle() {
         tagline="A turnkey Notion workspace pre-configured with 3 niche intake questionnaires, scope defense clauses, and Formula 2.0 readiness verification."
         priceDisplay="$19 One-Time"
         productSlug="client-kickoff-kit"
-        gumroadUrl="https://growthstackhub1.gumroad.com/l/client-kickoff-kit?wanted=true"
+        gumroadUrl="https://growthstackguide.gumroad.com/l/client-kickoff-kit?wanted=true"
         features={[
           'The Onboarding Command Center with 3 Filtered Views',
           'Formula 2.0 ⚡ Readiness Radar Gatekeeper',

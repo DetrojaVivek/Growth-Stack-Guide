@@ -142,7 +142,7 @@ export default function NotionVsCrmArticle() {
         tagline="Stop paying $50/month for enterprise software. Get the lightweight Notion CRM with an automated 14-day inactivity radar, Zoom decision logs, and 3 retention swipe files."
         priceDisplay="$7 One-Time"
         productSlug="client-pulse"
-        gumroadUrl="https://growthstackhub1.gumroad.com/l/client-pulse-crm?wanted=true"
+        gumroadUrl="https://growthstackguide.gumroad.com/l/client-pulse-crm?wanted=true"
         features={[
           'Formula 2.0 Inactivity Radar (⚠️ At-Risk alerts at 14+ days)',
           'Dedicated Client Dossiers (Timezones, channels, retainer $)',

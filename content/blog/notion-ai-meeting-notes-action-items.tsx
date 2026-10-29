@@ -433,7 +433,7 @@ Transcript / Notes:
         tagline="A turnkey Notion workspace featuring built-in Zoom Decision Logs, Formula 2.0 Inactivity Radar, and Client Retention Swipe Files."
         priceDisplay="$7 One-Time"
         productSlug="client-pulse"
-        gumroadUrl="https://growthstackhub1.gumroad.com/l/client-pulse-crm?wanted=true"
+        gumroadUrl="https://growthstackguide.gumroad.com/l/client-pulse-crm?wanted=true"
         features={[
           'Standardized Zoom & Meeting Decision Log Hub',
           'Automated 14-Day Inactivity Radar (Formula 2.0 alerts)',

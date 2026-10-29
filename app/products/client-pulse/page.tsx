@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 };
 
 // Configurable Gumroad Checkout URL ($7 Lifetime Purchase)
-const GUMROAD_CLIENT_PULSE_URL = 'https://growthstackhub1.gumroad.com/l/client-pulse-crm';
+const GUMROAD_CLIENT_PULSE_URL = 'https://growthstackguide.gumroad.com/l/client-pulse-crm';
 
 // The 8 Core Delivered Promises strictly matching 02_Tier1_Promises_Delivered.md
 const deliveredPillars = [
