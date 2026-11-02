@@ -61,7 +61,7 @@ export const RESOURCES: ResourceItem[] = [
       'Stage 4: Setting 3 non-negotiable needle-mover goals for the upcoming week',
       'Pre-built Notion database view and printable markdown checklist',
     ],
-    gumroadUrl: 'https://growthstackhub.gumroad.com/l/weekly-review-checklist',
+    gumroadUrl: 'https://growthstackguide.gumroad.com/l/weekly-review-checklist',
     categorySlug: 'solopreneur-operations',
     categoryName: 'Solopreneur Operations OS',
     faqs: [
