@@ -88,9 +88,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jakarta.variable} ${inter.variable} scroll-smooth`}>
       <head>
+        <meta name="p:domain_verify" content="45f8a4001b44ef59618dfd8523bb46a0" />
         <link rel="icon" href="/images/brand/favicon.ico" sizes="any" />
         <link rel="icon" href="/images/brand/favicon.png" type="image/png" />
-        <meta name="p:domain_verify" content="45f8a4001b44ef59618dfd8523bb46a0" />
       </head>
       <body className="min-h-screen bg-[var(--bg-main)] text-[var(--text-dark)] antialiased font-sans flex flex-col">
         {/* Google Analytics 4 Script */}
