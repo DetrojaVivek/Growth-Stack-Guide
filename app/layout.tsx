@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Growth Stack Guide — AI-Powered Productivity & Digital Systems',
+    title: 'Growth Stack Guide - AI-Powered Productivity & Digital Systems',
     description:
       'Battle-tested AI workflows, modular Notion systems, and practical productivity architectures for creators, freelancers and solopreneurs.',
   },
@@ -87,11 +87,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${jakarta.variable} ${inter.variable} scroll-smooth`}>
-      <head>
-        <meta name="p:domain_verify" content="45f8a4001b44ef59618dfd8523bb46a0" />
-        <link rel="icon" href="/images/brand/favicon.ico" sizes="any" />
-        <link rel="icon" href="/images/brand/favicon.png" type="image/png" />
-      </head>
       <body className="min-h-screen bg-[var(--bg-main)] text-[var(--text-dark)] antialiased font-sans flex flex-col">
         {/* Google Analytics 4 Script */}
         <GoogleAnalytics />

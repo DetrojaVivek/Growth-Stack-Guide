@@ -199,6 +199,37 @@ export const clientRecoveryMeta: BlogPostMeta = {
   relatedResources: ['ai-creator-productivity-kit'],
 };
 
+export const freelanceFinancesNotionMeta: BlogPostMeta = {
+  slug: 'track-freelance-income-expenses-notion',
+  title: 'How to Track Freelance Income and Expenses in Notion',
+  description:
+    'Set up a simple Notion system to log freelance invoices, track expenses, and see income vs. spending by month, plus US tax basics worth tracking in 2026.',
+  date: '2026-11-07',
+  updatedAt: '2026-11-07',
+  author: 'Vivek',
+  category: 'notion-systems',
+  tags: [
+    'notion-finances',
+    'freelance-finances',
+    'expense-tracker',
+    'invoice-tracker',
+    'notion-systems',
+    'us-freelance-taxes',
+  ],
+  targetAudience: 'both',
+  problemSolved:
+    'Scattered invoices, lost receipts, and tax season panic caused by lack of a centralized financial ledger.',
+  intentLevel: 'implementation',
+  depthLevel: 5,
+  originalValueElements: ['framework', 'checklist', 'decision-tree', 'practical-example'],
+  qualityScore: 98,
+  featuredImage: '/images/guides/track-freelance-income-expenses-notion.jpg',
+  readingTime: 10,
+  contentType: 'blog',
+  relatedProducts: ['client-pulse', 'client-kickoff-kit'],
+  relatedResources: ['ai-creator-productivity-kit', 'solopreneur-weekly-review-checklist'],
+};
+
 export const CORNERSTONE_ARTICLES_META: BlogPostMeta[] = [
   onboardingMeta,
   weeklyPlanningMeta,
@@ -208,6 +239,7 @@ export const CORNERSTONE_ARTICLES_META: BlogPostMeta[] = [
   meetingNotesMeta,
   overdueInvoiceMeta,
   clientRecoveryMeta,
+  freelanceFinancesNotionMeta,
 ];
 
 

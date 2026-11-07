@@ -43,8 +43,12 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     };
   }
 
+  const imageUrl = product.coverImage.startsWith('http')
+    ? product.coverImage
+    : `https://growthstackguide.com${product.coverImage}`;
+
   return {
-    title: `${product.title} (${product.priceDisplay}) | Growth Stack Guide`,
+    title: `${product.title} (${product.priceDisplay})`,
     description: product.description,
     alternates: {
       canonical: `/products/${params.slug}/`,
@@ -52,13 +56,21 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     openGraph: {
       title: `${product.title} — Official Notion System (${product.priceDisplay})`,
       description: product.description,
-      url: `/products/${params.slug}/`,
+      url: `https://growthstackguide.com/products/${params.slug}/`,
+      siteName: 'Growth Stack Guide',
+      type: 'website',
       images: [
         {
-          url: product.coverImage,
+          url: imageUrl,
           alt: product.title,
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.title} (${product.priceDisplay})`,
+      description: product.description,
+      images: [imageUrl],
     },
   };
 }
@@ -70,8 +82,33 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
     notFound();
   }
 
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.title,
+    description: product.description,
+    image: product.coverImage.startsWith('http')
+      ? product.coverImage
+      : `https://growthstackguide.com${product.coverImage}`,
+    offers: {
+      '@type': 'Offer',
+      price: product.price,
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `https://growthstackguide.com/products/${product.slug}/`,
+    },
+    brand: {
+      '@type': 'Brand',
+      name: 'Growth Stack Guide',
+    },
+  };
+
   return (
     <div className="w-full py-10 sm:py-16 lg:py-20 bg-[var(--bg-main)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <div className="container-custom max-w-5xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
         
         {/* Breadcrumb Navigation */}

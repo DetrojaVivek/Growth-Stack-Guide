@@ -11,6 +11,7 @@ import {
   meetingNotesMeta,
   overdueInvoiceMeta,
   clientRecoveryMeta,
+  freelanceFinancesNotionMeta,
 } from '@/data/cornerstone-meta';
 
 // Code-split dynamic imports: each article's heavy JSX is isolated and only loaded on its specific page
@@ -22,6 +23,7 @@ const SolopreneurOsArticle = dynamic(() => import('@/content/blog/solopreneur-op
 const MeetingNotesArticle = dynamic(() => import('@/content/blog/notion-ai-meeting-notes-action-items'), { ssr: true });
 const OverdueInvoiceArticle = dynamic(() => import('@/content/blog/freelance-overdue-invoice-email-scripts'), { ssr: true });
 const ClientRecoveryArticle = dynamic(() => import('@/content/blog/freelance-client-recovery-system-30-days'), { ssr: true });
+const FreelanceFinancesNotionArticle = dynamic(() => import('@/content/blog/track-freelance-income-expenses-notion'), { ssr: true });
 
 export interface RegisteredArticle {
   Component: React.ComponentType;
@@ -37,6 +39,7 @@ export const BLOG_REGISTRY: Record<string, RegisteredArticle> = {
   'notion-ai-meeting-notes-action-items': { Component: MeetingNotesArticle, meta: meetingNotesMeta },
   'freelance-overdue-invoice-email-scripts': { Component: OverdueInvoiceArticle, meta: overdueInvoiceMeta },
   'freelance-client-recovery-system-30-days': { Component: ClientRecoveryArticle, meta: clientRecoveryMeta },
+  'track-freelance-income-expenses-notion': { Component: FreelanceFinancesNotionArticle, meta: freelanceFinancesNotionMeta },
 };
 
 export function getAllArticles(): BlogPostMeta[] {

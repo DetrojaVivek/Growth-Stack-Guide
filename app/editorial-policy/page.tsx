@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Our rigorous 5-point testing framework, AI usage disclosure, and editorial standards for reviewing productivity software and Notion templates.',
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   openGraph: {

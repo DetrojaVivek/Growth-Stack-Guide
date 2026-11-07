@@ -40,8 +40,12 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   const tsxArticle = getTsxArticleBySlug(params.slug);
   if (tsxArticle) {
     const { meta } = tsxArticle;
+    const imageUrl = meta.featuredImage
+      ? (meta.featuredImage.startsWith('http') ? meta.featuredImage : `https://growthstackguide.com${meta.featuredImage}`)
+      : 'https://growthstackguide.com/images/guides/freelance-client-onboarding-portal-crm.jpg';
+
     return {
-      title: `${meta.title} | Growth Stack Guide`,
+      title: meta.title,
       description: meta.description,
       alternates: {
         canonical: `/blog/${params.slug}/`,
@@ -49,25 +53,36 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       openGraph: {
         title: meta.title,
         description: meta.description,
-        url: `/blog/${params.slug}/`,
+        url: `https://growthstackguide.com/blog/${params.slug}/`,
+        siteName: 'Growth Stack Guide',
         type: 'article',
         publishedTime: meta.date,
         modifiedTime: meta.updatedAt,
         authors: [meta.author],
         images: [
           {
-            url: meta.featuredImage || '/images/guides/freelance-client-onboarding-portal-crm.jpg',
+            url: imageUrl,
             alt: meta.title,
           },
         ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: meta.title,
+        description: meta.description,
+        images: [imageUrl],
       },
     };
   }
 
   const legacyArticle = await getLegacyArticleBySlug(params.slug);
   if (legacyArticle) {
+    const imageUrl = legacyArticle.frontmatter.cover
+      ? (legacyArticle.frontmatter.cover.startsWith('http') ? legacyArticle.frontmatter.cover : `https://growthstackguide.com${legacyArticle.frontmatter.cover}`)
+      : 'https://growthstackguide.com/images/guides/freelance-client-onboarding-portal-crm.jpg';
+
     return {
-      title: `${legacyArticle.frontmatter.title} | Growth Stack Guide`,
+      title: legacyArticle.frontmatter.title,
       description: legacyArticle.frontmatter.description,
       alternates: {
         canonical: `/blog/${params.slug}/`,
@@ -75,17 +90,24 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       openGraph: {
         title: legacyArticle.frontmatter.title,
         description: legacyArticle.frontmatter.description,
-        url: `/blog/${params.slug}/`,
+        url: `https://growthstackguide.com/blog/${params.slug}/`,
+        siteName: 'Growth Stack Guide',
         type: 'article',
         publishedTime: legacyArticle.frontmatter.date,
         modifiedTime: legacyArticle.frontmatter.updated,
         authors: [legacyArticle.frontmatter.author],
         images: [
           {
-            url: legacyArticle.frontmatter.cover || '/images/guides/freelance-client-onboarding-portal-crm.jpg',
+            url: imageUrl,
             alt: legacyArticle.frontmatter.coverAlt || legacyArticle.frontmatter.title,
           },
         ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: legacyArticle.frontmatter.title,
+        description: legacyArticle.frontmatter.description,
+        images: [imageUrl],
       },
     };
   }

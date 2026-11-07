@@ -36,8 +36,12 @@ export async function generateMetadata({ params }: ResourcePageProps): Promise<M
     };
   }
 
+  const imageUrl = resource.coverImage.startsWith('http')
+    ? resource.coverImage
+    : `https://growthstackguide.com${resource.coverImage}`;
+
   return {
-    title: `${resource.title} | Growth Stack Guide`,
+    title: resource.title,
     description: resource.description,
     alternates: {
       canonical: `/resources/${params.slug}/`,
@@ -45,13 +49,21 @@ export async function generateMetadata({ params }: ResourcePageProps): Promise<M
     openGraph: {
       title: `Free ${resource.title} | Growth Stack Guide`,
       description: resource.description,
-      url: `/resources/${params.slug}/`,
+      url: `https://growthstackguide.com/resources/${params.slug}/`,
+      siteName: 'Growth Stack Guide',
+      type: 'website',
       images: [
         {
-          url: resource.coverImage,
+          url: imageUrl,
           alt: resource.title,
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Free ${resource.title}`,
+      description: resource.description,
+      images: [imageUrl],
     },
   };
 }
@@ -63,8 +75,28 @@ export default function ResourceDetailPage({ params }: ResourcePageProps) {
     notFound();
   }
 
+  const resourceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: resource.title,
+    description: resource.description,
+    image: resource.coverImage.startsWith('http')
+      ? resource.coverImage
+      : `https://growthstackguide.com${resource.coverImage}`,
+    isAccessibleForFree: true,
+    url: `https://growthstackguide.com/resources/${resource.slug}/`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Growth Stack Guide',
+    },
+  };
+
   return (
     <div className="w-full py-10 sm:py-16 lg:py-20 bg-[var(--bg-main)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(resourceSchema) }}
+      />
       <div className="container-custom max-w-4xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
         
         {/* Breadcrumb Navigation */}

@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
-      "source": "/blog/freelance-client-onboarding-portal-guide/:path*",
+      "source": "/blog/freelance-client-onboarding-portal-guide/",
       "destination": "/blog/client-onboarding-system/",
       "permanent": true
     },
@@ -12,7 +12,12 @@
       "permanent": true
     },
     {
-      "source": "/blog/how-to-build-a-notion-second-brain/:path*",
+      "source": "/blog/freelance-client-onboarding-portal-guide/:path*",
+      "destination": "/blog/client-onboarding-system/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-build-a-notion-second-brain/",
       "destination": "/blog/notion-freelancer-crm/",
       "permanent": true
     },
@@ -22,7 +27,12 @@
       "permanent": true
     },
     {
-      "source": "/blog/the-50-ai-prompt-vault-for-creators/:path*",
+      "source": "/blog/how-to-build-a-notion-second-brain/:path*",
+      "destination": "/blog/notion-freelancer-crm/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-50-ai-prompt-vault-for-creators/",
       "destination": "/blog/ai-weekly-planning-system/",
       "permanent": true
     },
@@ -32,7 +42,12 @@
       "permanent": true
     },
     {
-      "source": "/blog/solopreneur-weekly-review-operating-system/:path*",
+      "source": "/blog/the-50-ai-prompt-vault-for-creators/:path*",
+      "destination": "/blog/ai-weekly-planning-system/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/solopreneur-weekly-review-operating-system/",
       "destination": "/blog/solopreneur-operations-os/",
       "permanent": true
     },
@@ -42,7 +57,12 @@
       "permanent": true
     },
     {
-      "source": "/blog/multi-platform-content-calendar-batching-sop/:path*",
+      "source": "/blog/solopreneur-weekly-review-operating-system/:path*",
+      "destination": "/blog/solopreneur-operations-os/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/multi-platform-content-calendar-batching-sop/",
       "destination": "/blog/solopreneur-operations-os/",
       "permanent": true
     },
@@ -50,7 +70,11 @@
       "source": "/blog/multi-platform-content-calendar-batching-sop",
       "destination": "/blog/solopreneur-operations-os/",
       "permanent": true
+    },
+    {
+      "source": "/blog/multi-platform-content-calendar-batching-sop/:path*",
+      "destination": "/blog/solopreneur-operations-os/",
+      "permanent": true
     }
   ]
 }
-

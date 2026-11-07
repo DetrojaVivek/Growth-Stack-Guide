@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   }
 
   return {
-    title: `${tool.name} Review (${tool.verifiedDate}) | Growth Stack Guide`,
+    title: `${tool.name} Review (${tool.verifiedDate})`,
     description: `Hands-on review of ${tool.name}. Verified pricing (${tool.pricingTier}), honest pros and limitations, and how we use it in solo workflows.`,
     alternates: {
       canonical: `/tools/${params.slug}/`,
@@ -46,7 +46,14 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
     openGraph: {
       title: `${tool.name} Review & Verified Pricing | Growth Stack Guide`,
       description: tool.tagline,
-      url: `/tools/${params.slug}/`,
+      url: `https://growthstackguide.com/tools/${params.slug}/`,
+      siteName: 'Growth Stack Guide',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${tool.name} Review (${tool.verifiedDate})`,
+      description: tool.tagline,
     },
   };
 }
@@ -58,8 +65,31 @@ export default function ToolDetailPage({ params }: ToolPageProps) {
     notFound();
   }
 
+  const toolSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'SoftwareApplication',
+      name: tool.name,
+      applicationCategory: tool.category,
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: tool.rating,
+      bestRating: 5,
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'Growth Stack Guide',
+    },
+  };
+
   return (
     <div className="w-full py-10 sm:py-16 lg:py-20 bg-[var(--bg-main)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolSchema) }}
+      />
       <div className="container-custom max-w-4xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
         
         {/* Breadcrumb Navigation */}

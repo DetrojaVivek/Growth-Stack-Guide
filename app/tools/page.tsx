@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Curated Software & AI Tool Directory | Growth Stack Guide',
+  title: 'Curated Software & AI Tool Directory',
   description:
     'Field-tested software recommendations for solo operators. Honest reviews of Notion, Claude, ChatGPT, Make.com, Kit, and Canva with verified pricing and zero sponsored fluff.',
   openGraph: {

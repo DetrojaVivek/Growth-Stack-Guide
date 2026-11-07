@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Learn how Growth Stack Guide collects, uses, and protects your personal data in accordance with US digital privacy standards.',
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   openGraph: {

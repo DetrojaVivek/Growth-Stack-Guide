@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Get in touch with the Growth Stack Guide team for technical template support, editorial feedback, or partnership inquiries.',
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   openGraph: {

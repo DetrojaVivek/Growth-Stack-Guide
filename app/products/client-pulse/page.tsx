@@ -25,7 +25,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Client Pulse ($7) — Anti-Neglect Relationship CRM for Solo Freelancers | Growth Stack Guide',
+  title: 'Client Pulse ($7) — Anti-Neglect Relationship CRM for Solo Freelancers',
   description:
     'The lightweight Notion CRM for solo service providers. Includes automated 14-day inactivity radar, Zoom meeting decision logs, 5-stage milestone tracking, and 3 client retention swipe scripts. One-time $7 lifetime access.',
   keywords: [
@@ -40,14 +40,24 @@ export const metadata: Metadata = {
     title: 'Client Pulse ($7) — Anti-Neglect Relationship CRM for Solo Freelancers',
     description:
       'Never lose a paying client to radio silence. Lightweight Notion CRM with automated 14-day inactivity radar, Zoom meeting logs, and 3 retention swipe scripts.',
+    url: 'https://growthstackguide.com/products/client-pulse/',
+    siteName: 'Growth Stack Guide',
+    type: 'website',
     images: [
       {
-        url: '/images/guides/client-pulse-anti-neglect-freelancer-crm-notion.jpg',
+        url: 'https://growthstackguide.com/images/guides/client-pulse-anti-neglect-freelancer-crm-notion.jpg',
         width: 1200,
         height: 630,
         alt: 'Client Pulse Anti-Neglect Notion CRM Workspace Preview',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Client Pulse ($7) — Anti-Neglect Relationship CRM for Solo Freelancers',
+    description:
+      'Never lose a paying client to radio silence. Lightweight Notion CRM with automated 14-day inactivity radar, Zoom meeting logs, and 3 retention swipe scripts.',
+    images: ['https://growthstackguide.com/images/guides/client-pulse-anti-neglect-freelancer-crm-notion.jpg'],
   },
 };
 

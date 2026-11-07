@@ -26,7 +26,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Client Kickoff Kit ($19) — Practical Onboarding Workflow for Solo Freelancers | Growth Stack Guide',
+  title: 'Client Kickoff Kit ($19) — Practical Onboarding Workflow for Solo Freelancers',
   description:
     'The repeatable client onboarding system for solo service providers. Includes 3 niche intake questionnaires (Design, Copy, Dev), scope defense clauses, and automated Formula 2.0 Readiness Radar. One-time $19 lifetime access.',
   keywords: [
@@ -42,14 +42,24 @@ export const metadata: Metadata = {
     title: 'Client Kickoff Kit ($19) — Practical Onboarding Workflow for Solo Freelancers',
     description:
       'Stop post-agreement chaos, delayed client assets, and unpaid scope creep. Turnkey Notion onboarding workflow with 3 niche intake questionnaires and automated readiness verification.',
+    url: 'https://growthstackguide.com/products/client-kickoff-kit/',
+    siteName: 'Growth Stack Guide',
+    type: 'website',
     images: [
       {
-        url: '/images/guides/client-kickoff-kit-onboarding-workflow-notion.jpg',
+        url: 'https://growthstackguide.com/images/guides/client-kickoff-kit-onboarding-workflow-notion.jpg',
         width: 1200,
         height: 630,
         alt: 'Client Kickoff Kit Notion Workspace Preview',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Client Kickoff Kit ($19) — Practical Onboarding Workflow for Solo Freelancers',
+    description:
+      'Stop post-agreement chaos, delayed client assets, and unpaid scope creep. Turnkey Notion onboarding workflow with 3 niche intake questionnaires and automated readiness verification.',
+    images: ['https://growthstackguide.com/images/guides/client-kickoff-kit-onboarding-workflow-notion.jpg'],
   },
 };
 

@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Free Digital Resources & Notion Blueprints | Growth Stack Guide',
+  title: 'Free Digital Resources & Notion Blueprints',
   description:
     'Download 100% free Notion templates, AI prompt swipe files, and weekly review SOPs. Delivered instantly to your workspace with zero paywalls.',
   openGraph: {

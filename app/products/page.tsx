@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Digital Products & Notion Operating Systems | Growth Stack Guide',
+  title: 'Digital Products & Notion Operating Systems',
   description:
     'Explore our field-tested Notion operating systems, freelancer CRMs, and creator suites. Built for solo operators on Notion free tier with one-time transparent pricing ($7 and $19).',
   openGraph: {

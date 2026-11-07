@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'The terms and conditions governing the use of Growth Stack Guide digital products, Notion templates, and educational resources.',
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   openGraph: {

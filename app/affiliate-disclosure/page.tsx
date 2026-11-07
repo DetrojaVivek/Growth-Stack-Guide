@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Full transparency on how Growth Stack Guide earns revenue through affiliate partnerships without compromising editorial integrity.',
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   openGraph: {

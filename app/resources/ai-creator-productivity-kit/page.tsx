@@ -22,21 +22,31 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Free Freelancer Follow-Up Tracker (Notion Template & Swipe Scripts) | Growth Stack Guide',
+  title: 'Free Freelancer Follow-Up Tracker (Notion Template & Swipe Scripts)',
   description:
     'Download the official Freelancer Follow-Up Tracker for Notion ($0 Free Template). Unlock the 1-Tap Quick-Log Dock, Formula 2.0 Urgency Radar, 14-Day Cadence Table, and 3 Proven Follow-Up Email Swipe Scripts.',
   openGraph: {
     title: 'Free Freelancer Follow-Up Tracker | Growth Stack Guide',
     description:
       'High-speed follow-up pipeline for solo service providers. Never let a prospective client inquiry slip through the cracks. 100% free on Notion.',
+    url: 'https://growthstackguide.com/resources/ai-creator-productivity-kit/',
+    siteName: 'Growth Stack Guide',
+    type: 'website',
     images: [
       {
-        url: '/images/guides/freelancer-follow-up-tracker-notion-system.jpg',
+        url: 'https://growthstackguide.com/images/guides/freelancer-follow-up-tracker-notion-system.jpg',
         width: 1200,
         height: 630,
         alt: 'Freelancer Follow-Up Tracker Notion Workspace Preview',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Freelancer Follow-Up Tracker (Notion Template & Swipe Scripts)',
+    description:
+      'High-speed follow-up pipeline for solo service providers. Never let a prospective client inquiry slip through the cracks. 100% free on Notion.',
+    images: ['https://growthstackguide.com/images/guides/freelancer-follow-up-tracker-notion-system.jpg'],
   },
 };
 
