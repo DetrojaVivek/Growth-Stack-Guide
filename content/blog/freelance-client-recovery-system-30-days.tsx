@@ -126,14 +126,20 @@ export default function ClientRecoveryArticle() {
 
       {/* Editorial System Visual */}
       <figure className="my-6 rounded-2xl overflow-hidden border border-[var(--border-color)] bg-[#FAF8F2] shadow-xs">
-        <img
-          src="/images/guides/freelance-client-recovery-system-30-days.jpg"
-          alt="Minimalist freelance workstation with an open laptop displaying a structured 30-day client acquisition pipeline and planning notebook"
-          width={1200}
-          height={675}
-          className="w-full h-auto object-cover"
-          loading="eager"
-        />
+        <picture>
+          <source
+            srcSet="/images/guides/freelance-client-recovery-system-30-days.webp"
+            type="image/webp"
+          />
+          <img
+            src="/images/guides/freelance-client-recovery-system-30-days.jpg"
+            alt="Minimalist freelance workstation with an open laptop displaying a structured 30-day client acquisition pipeline and planning notebook"
+            width={1200}
+            height={675}
+            className="w-full h-auto object-cover"
+            loading="eager"
+          />
+        </picture>
         <figcaption className="p-3 text-center text-xs text-[var(--text-muted)] border-t border-[var(--border-color)] bg-white">
           Figure 1: The solo operator client acquisition dashboard — centralizing warm reactivations, agency overflow partners, and targeted outbound.
         </figcaption>

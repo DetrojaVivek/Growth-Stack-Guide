@@ -12,6 +12,7 @@ import {
   overdueInvoiceMeta,
   clientRecoveryMeta,
   freelanceFinancesNotionMeta,
+  aiWritingToolsMeta,
 } from '@/data/cornerstone-meta';
 
 // Code-split dynamic imports: each article's heavy JSX is isolated and only loaded on its specific page
@@ -24,6 +25,7 @@ const MeetingNotesArticle = dynamic(() => import('@/content/blog/notion-ai-meeti
 const OverdueInvoiceArticle = dynamic(() => import('@/content/blog/freelance-overdue-invoice-email-scripts'), { ssr: true });
 const ClientRecoveryArticle = dynamic(() => import('@/content/blog/freelance-client-recovery-system-30-days'), { ssr: true });
 const FreelanceFinancesNotionArticle = dynamic(() => import('@/content/blog/track-freelance-income-expenses-notion'), { ssr: true });
+const AiWritingToolsArticle = dynamic(() => import('@/content/blog/best-ai-writing-tools-freelancers-2026'), { ssr: true });
 
 export interface RegisteredArticle {
   Component: React.ComponentType;
@@ -40,6 +42,7 @@ export const BLOG_REGISTRY: Record<string, RegisteredArticle> = {
   'freelance-overdue-invoice-email-scripts': { Component: OverdueInvoiceArticle, meta: overdueInvoiceMeta },
   'freelance-client-recovery-system-30-days': { Component: ClientRecoveryArticle, meta: clientRecoveryMeta },
   'track-freelance-income-expenses-notion': { Component: FreelanceFinancesNotionArticle, meta: freelanceFinancesNotionMeta },
+  'best-ai-writing-tools-freelancers-2026': { Component: AiWritingToolsArticle, meta: aiWritingToolsMeta },
 };
 
 export function getAllArticles(): BlogPostMeta[] {

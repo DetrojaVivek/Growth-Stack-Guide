@@ -109,14 +109,20 @@ export default function OverdueInvoiceArticle() {
 
       {/* Editorial System Visual (Figure 1) */}
       <figure className="my-6 rounded-2xl overflow-hidden border border-[var(--border-color)] bg-[#FAF8F2] shadow-xs">
-        <img
-          src="/images/guides/freelance-overdue-invoice-recovery-dashboard.jpg"
-          alt="Minimalist freelance workspace featuring an open laptop with an accounts receivable invoice dashboard"
-          width={1200}
-          height={675}
-          className="w-full h-auto object-cover"
-          loading="eager"
-        />
+        <picture>
+          <source
+            srcSet="/images/guides/freelance-overdue-invoice-recovery-dashboard.webp"
+            type="image/webp"
+          />
+          <img
+            src="/images/guides/freelance-overdue-invoice-recovery-dashboard.jpg"
+            alt="Minimalist freelance workspace featuring an open laptop with an accounts receivable invoice dashboard"
+            width={1200}
+            height={675}
+            className="w-full h-auto object-cover"
+            loading="eager"
+          />
+        </picture>
         <figcaption className="p-3 text-center text-xs text-[var(--text-muted)] border-t border-[var(--border-color)] bg-white">
           Figure 1: The solo operator billing command center — tracking Net-15 invoices, overdue client accounts, and cleared milestone deposits.
         </figcaption>
@@ -296,14 +302,20 @@ export default function OverdueInvoiceArticle() {
 
         {/* 4-Stage Escalation Visual Infographic (Figure 2) */}
         <figure className="my-6 rounded-2xl overflow-hidden border border-[var(--border-color)] bg-white shadow-xs">
-          <img
-            src="/images/guides/freelance-invoice-escalation-timeline-infographic.jpg"
-            alt="Infographic flowchart showing the 4-stage freelance invoice escalation timeline from day -3 courtesy reminder to day +15 contract enforcement"
-            width={1200}
-            height={675}
-            className="w-full h-auto object-cover"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              srcSet="/images/guides/freelance-invoice-escalation-timeline-infographic.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/guides/freelance-invoice-escalation-timeline-infographic.jpg"
+              alt="Infographic flowchart showing the 4-stage freelance invoice escalation timeline from day -3 courtesy reminder to day +15 contract enforcement"
+              width={1200}
+              height={675}
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </picture>
           <figcaption className="p-3 text-center text-xs text-[var(--text-muted)] border-t border-[var(--border-color)] bg-[#FAF8F2]">
             Figure 2: The 4-Stage Escalation Roadmap — chronological triggers designed to de-escalate tension while securing payment clearance.
           </figcaption>
@@ -560,14 +572,20 @@ Accounts Management,
 
         {/* Staging Server & Asset Lock Visual (Figure 3) */}
         <figure className="my-6 rounded-2xl overflow-hidden border border-[var(--border-color)] bg-[#FAF8F2] shadow-xs">
-          <img
-            src="/images/guides/freelance-staging-server-asset-lock-system.jpg"
-            alt="Freelance designer workstation showing a password-protected staging preview on a laptop alongside design assets"
-            width={1200}
-            height={675}
-            className="w-full h-auto object-cover"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              srcSet="/images/guides/freelance-staging-server-asset-lock-system.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/guides/freelance-staging-server-asset-lock-system.jpg"
+              alt="Freelance designer workstation showing a password-protected staging preview on a laptop alongside design assets"
+              width={1200}
+              height={675}
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </picture>
           <figcaption className="p-3 text-center text-xs text-[var(--text-muted)] border-t border-[var(--border-color)] bg-white">
             Figure 3: The Staging Lock Protocol — password-protecting review environments and withholding source files until the final invoice clears.
           </figcaption>

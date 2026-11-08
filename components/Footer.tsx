@@ -49,7 +49,7 @@ export default function Footer() {
                   aria-label="Pinterest"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/social/pinterest.svg" alt="Pinterest" className="w-4 h-4 invert opacity-90" />
+                  <img src="/images/social/pinterest.svg" alt="Pinterest" className="w-4 h-4 invert opacity-90" loading="lazy" width={16} height={16} />
                 </a>
                 <a
                   href="https://facebook.com"
@@ -59,7 +59,7 @@ export default function Footer() {
                   aria-label="Facebook"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/social/facebook.svg" alt="Facebook" className="w-4 h-4 invert opacity-90" />
+                  <img src="/images/social/facebook.svg" alt="Facebook" className="w-4 h-4 invert opacity-90" loading="lazy" width={16} height={16} />
                 </a>
                 <a
                   href="https://instagram.com"
@@ -69,7 +69,7 @@ export default function Footer() {
                   aria-label="Instagram"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/social/instagram.svg" alt="Instagram" className="w-4 h-4 invert opacity-90" />
+                  <img src="/images/social/instagram.svg" alt="Instagram" className="w-4 h-4 invert opacity-90" loading="lazy" width={16} height={16} />
                 </a>
               </div>
             </div>
