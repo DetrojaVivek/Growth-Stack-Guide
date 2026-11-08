@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllTools, getToolBySlug } from '@/data/tools';
+import NotionReviewDetail from '@/components/tools/NotionReviewDetail';
 import {
   Wrench,
   Star,
@@ -37,6 +38,31 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
     };
   }
 
+  if (params.slug === 'notion') {
+    return {
+      title: 'Notion for Solopreneurs & Freelancers (2026): The Honest Operational Review',
+      description:
+        'An unbiased hands-on review of Notion for solo freelancers and solopreneurs in 2026. Verified pricing, Notion Forms, native Charts, Formulas 2.0, and 5 foundational client business systems.',
+      alternates: {
+        canonical: '/tools/notion/',
+      },
+      openGraph: {
+        title: 'Notion for Solopreneurs & Freelancers (2026): The Honest Operational Review',
+        description:
+          'How solo operators run clients, cashflow, and content inside Notion — real 2026 pricing, honest limitations, and why 90% of freelancers should never pay for Plus.',
+        url: 'https://growthstackguide.com/tools/notion/',
+        siteName: 'Growth Stack Guide',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Notion for Solopreneurs & Freelancers (2026): The Honest Operational Review',
+        description:
+          'How solo operators run clients, cashflow, and content inside Notion — real 2026 pricing, honest limitations, and why 90% of freelancers should never pay for Plus.',
+      },
+    };
+  }
+
   return {
     title: `${tool.name} Review (${tool.verifiedDate})`,
     description: `Hands-on review of ${tool.name}. Verified pricing (${tool.pricingTier}), honest pros and limitations, and how we use it in solo workflows.`,
@@ -63,6 +89,10 @@ export default function ToolDetailPage({ params }: ToolPageProps) {
 
   if (!tool) {
     notFound();
+  }
+
+  if (tool.slug === 'notion') {
+    return <NotionReviewDetail tool={tool} />;
   }
 
   const toolSchema = {
