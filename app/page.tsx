@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '@/components/Hero';
 import TrustStrip from '@/components/TrustStrip';
+import ProblemRoadmap from '@/components/ProblemRoadmap';
 import CoreCategories from '@/components/CoreCategories';
 import FeaturedBlueprint from '@/components/FeaturedBlueprint';
 import LatestGuidesFeed from '@/components/LatestGuidesFeed';
@@ -12,31 +13,34 @@ import AuthorEEAT from '@/components/AuthorEEAT';
 export default function HomePage() {
   return (
     <div className="w-full flex flex-col">
-      {/* 1. Hero Section: Direct-response messaging hook for solo operators */}
+      {/* 1. Hero Section: Editorial mission & dual CTA */}
       <Hero />
 
-      {/* 2. Trust Strip: Problem-first, free-tier compatibility, zero paywall proof */}
+      {/* 2. Trust Strip: Editorial proof, free-tier compatibility, zero paywall proof */}
       <TrustStrip />
 
-      {/* 3. The 5 Strategic Knowledge Pillars Grid */}
-      <CoreCategories />
+      {/* 3. Start Here: Interactive Problem-First Operational Roadmap */}
+      <ProblemRoadmap />
 
       {/* 4. Featured Cornerstone Blueprint: Freelance Client Onboarding System */}
       <FeaturedBlueprint />
 
-      {/* 5. Latest Editorial Blueprints Feed */}
+      {/* 5. The 5 Strategic Knowledge Pillars Grid */}
+      <CoreCategories />
+
+      {/* 6. Latest Editorial Blueprints Feed */}
       <LatestGuidesFeed />
 
-      {/* 6. Flagship System Showcase: Turnkey Notion Workspace */}
+      {/* 7. The Free Solopreneur Starter Vault: Gumroad Lead Engine ($0) */}
       <FeaturedFreebie />
 
-      {/* 7. Digital Product Ladder ($0 -> $7 -> $19) */}
+      {/* 8. Open-Access Promise & Optional Turnkey Workspaces */}
       <ProductLadder />
 
-      {/* 8. The Old Chaotic Way vs Growth Stack Systems Way */}
+      {/* 9. The Old Chaotic Way vs Growth Stack Systems Way */}
       <OldVsNewComparison />
 
-      {/* 9. Founder E-E-A-T Profile & Conspicuous FTC Affiliate Disclosure */}
+      {/* 10. Founder E-E-A-T Profile & Conspicuous FTC Affiliate Disclosure */}
       <AuthorEEAT />
     </div>
   );

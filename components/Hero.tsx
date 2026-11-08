@@ -32,18 +32,18 @@ export default function Hero() {
             {/* Dual CTA Button Group */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
               <Link
-                href="/resources/ai-creator-productivity-kit/"
+                href="/blog/"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-7 sm:py-4 rounded-full bg-[var(--primary-yellow)] hover:bg-[var(--primary-yellow-hover)] text-[var(--text-dark)] font-bold text-sm sm:text-base shadow-[var(--shadow-yellow)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 min-h-[48px] text-center"
               >
-                <span>Get Free Follow-Up Tracker</span>
+                <span>Explore Free Blueprints</span>
                 <ArrowRight className="w-4 h-4 text-[var(--text-dark)] flex-shrink-0" />
               </Link>
-              <Link
-                href="/blog/"
+              <a
+                href="#free-toolkit"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-7 sm:py-4 rounded-full bg-white hover:bg-[#FAF8F2] text-[var(--text-dark)] font-bold text-sm sm:text-base border border-[var(--border-color)] shadow-[var(--shadow-sm)] hover:border-[var(--text-muted)] transition-all min-h-[48px] text-center"
               >
-                <span>Browse Problem Guides</span>
-              </Link>
+                <span>Claim Free Toolkit ($0)</span>
+              </a>
             </div>
 
             {/* Micro-Trust Highlights */}

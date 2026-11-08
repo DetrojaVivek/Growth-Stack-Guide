@@ -48,7 +48,7 @@ export default function FeaturedBlueprint() {
 
               <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <Link
-                  href="/blog/freelance-client-onboarding-portal-guide/"
+                  href="/blog/client-onboarding-system/"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[var(--primary-yellow)] hover:bg-[var(--primary-yellow-hover)] text-[var(--text-dark)] font-bold text-xs sm:text-sm shadow-xs hover:shadow transition-all min-h-[44px]"
                 >
                   <span>Read Full Blueprint (100% Free)</span>

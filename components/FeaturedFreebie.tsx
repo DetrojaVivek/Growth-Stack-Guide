@@ -1,95 +1,100 @@
 import React from 'react';
 import Link from 'next/link';
-import { Sparkles, Check, Download } from 'lucide-react';
+import { Sparkles, Check, Download, ExternalLink, ShieldCheck, FileText, Database, CheckSquare } from 'lucide-react';
 
-const freebieModules = [
+const freebieItems = [
   {
-    title: '1-Tap Quick-Capture Action Dock',
-    desc: 'Log inbound prospect inquiries from email, LinkedIn, or Upwork in under 5 seconds with auto-scheduled 48h follow-ups.',
+    icon: Database,
+    title: 'The Freelancer Follow-Up Pipeline (Notion DB)',
+    desc: 'Pre-configured 5-property pipeline with single-tap lead capture and dynamic Formula 2.0 urgency tags (Overdue, Due Today, In Touch).',
+    badge: 'Runs on Notion Free Tier',
   },
   {
-    title: 'Formula 2.0 Dynamic Urgency Radar',
-    desc: 'Automated urgency badges highlight 🚨 Overdue leads, ⏰ Due Today actions, and ⏳ Upcoming touchpoints with zero mental math.',
+    icon: FileText,
+    title: 'Overdue Invoice Recovery Swipe Scripts (PDF & Markdown)',
+    desc: '3 word-for-word email templates designed to recover late Net-30 payments without damaging client relationships or sounding aggressive.',
+    badge: '3 Copy-Paste Templates',
   },
   {
-    title: '3 Battle-Tested Email Swipe Scripts',
-    desc: 'Includes the 48-Hour Polite Nudge, the Value-Add Touchpoint, and the high-response 9-Word Breakup Email.',
-  },
-  {
-    title: '14-Day Cadence Timing Roadmap Table',
-    desc: 'A proven outreach milestone schedule (Days 0, 2, 5, 9, 14) so you stay top-of-mind without feeling pushy or desperate.',
-  },
-  {
-    title: 'Instant Context Lead Dossier Note Framework',
-    desc: 'Pre-built fields capture primary goals, budget range, target launch date, and talking points before sales calls.',
-  },
-  {
-    title: '5-Minute Client Hand-Off Protocol',
-    desc: 'Interactive checklist to lock deposits, record client working styles, and transition closed deals into active delivery.',
-  },
-  {
-    title: '100% Free, Private & Lightweight Workspace',
-    desc: 'Operates entirely inside your personal Notion workspace—zero external subscriptions, 100% data privacy, and mobile widget ready.',
+    icon: CheckSquare,
+    title: '15-Minute Solopreneur Sprint Checklist (Notion SOP)',
+    desc: 'Structured Friday review protocol to clear inbox clutter, reconcile weekly billable hours, and lock priorities for Monday morning.',
+    badge: 'Instant Notion Duplication',
   },
 ];
 
 export default function FeaturedFreebie() {
   return (
-    <section id="free-kit" className="py-10 sm:py-16 lg:py-20 bg-white border-y border-[var(--border-color)]">
+    <section id="free-toolkit" className="py-12 sm:py-16 lg:py-20 bg-white border-y border-[var(--border-color)]">
       <div className="container-custom max-w-7xl mx-auto">
-        <div className="rounded-2xl sm:rounded-3xl bg-[var(--bg-main)] border border-[var(--border-color)] p-4 sm:p-8 lg:p-12 shadow-[var(--shadow-md)]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div className="rounded-3xl bg-[var(--bg-main)] border border-[var(--border-color)] p-6 sm:p-10 lg:p-12 shadow-[var(--shadow-md)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left Column: Product Value & Modules */}
-            <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[var(--primary-yellow-light)] border border-[var(--primary-yellow)]/30 text-[#B45309] text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+            {/* Left Column: Value & Core Assets */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--primary-yellow-light)] border border-[var(--primary-yellow)]/40 text-[#B45309] text-xs font-bold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5 text-[#B45309] flex-shrink-0" />
-                <span>Flagship Free Template • Inbound Pipeline System</span>
+                <span>100% Free Resource Vault &bull; Hosted on Gumroad ($0)</span>
               </div>
 
-              <h2 className="font-heading font-extrabold text-xl sm:text-3xl lg:text-4xl text-[var(--text-dark)] tracking-tight leading-tight">
-                Stop letting freelance inquiries slip through the cracks.
-              </h2>
-
-              <p className="text-xs sm:text-base text-[var(--text-muted)] leading-relaxed">
-                The <strong className="text-[var(--text-dark)]">Freelancer Follow-Up Tracker</strong> gives you an automated urgency radar, a 5-second lead capture dock, and battle-tested email swipe scripts in one lightweight Notion workspace.
-              </p>
-
-              {/* Modules Checklist */}
-              <div className="space-y-2.5 sm:space-y-3 pt-1 sm:pt-2">
-                {freebieModules.map((mod, index) => (
-                  <div key={mod.title} className="flex items-start gap-2.5 sm:gap-3">
-                    <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[var(--color-success-bg)] text-[var(--color-success)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[3]" />
-                    </div>
-                    <div className="text-xs sm:text-sm min-w-0">
-                      <strong className="text-[var(--text-dark)] font-bold">
-                        Pillar {index + 1}: {mod.title}
-                      </strong>{' '}
-                      — <span className="text-[var(--text-muted)]">{mod.desc}</span>
-                    </div>
-                  </div>
-                ))}
+              <div className="space-y-3">
+                <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[var(--text-dark)] tracking-tight leading-tight">
+                  Claim the Complete Solo Operator Toolkit
+                </h2>
+                <p className="text-xs sm:text-base text-[var(--text-muted)] leading-relaxed">
+                  We believe essential business infrastructure should be accessible to every solo operator. Enter your email on Gumroad to duplicate these 3 battle-tested Notion systems and swipe files directly into your workspace at zero cost.
+                </p>
               </div>
 
-              {/* Download CTA */}
-              <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+              {/* 3 Companion Asset Cards */}
+              <div className="space-y-3 pt-1">
+                {freebieItems.map((item) => {
+                  const IconComp = item.icon;
+                  return (
+                    <div
+                      key={item.title}
+                      className="p-4 rounded-2xl bg-white border border-[var(--border-color)] flex items-start gap-3.5 shadow-2xs"
+                    >
+                      <div className="w-8 h-8 rounded-xl bg-[var(--purple-light)] text-[var(--purple-main)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <IconComp className="w-4 h-4" />
+                      </div>
+                      <div className="space-y-1 min-w-0">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <h3 className="font-heading font-bold text-xs sm:text-sm text-[var(--text-dark)]">
+                            {item.title}
+                          </h3>
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]">
+                            {item.badge}
+                          </span>
+                        </div>
+                        <p className="text-xs text-[var(--text-muted)] leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   href="/resources/ai-creator-productivity-kit/"
-                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full bg-[var(--primary-yellow)] hover:bg-[var(--primary-yellow-hover)] text-[var(--text-dark)] font-bold text-xs sm:text-base shadow-[var(--shadow-yellow)] transition-all transform hover:-translate-y-0.5 min-h-[48px] text-center"
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-[var(--primary-yellow)] hover:bg-[var(--primary-yellow-hover)] text-[var(--text-dark)] font-bold text-xs sm:text-sm shadow-[var(--shadow-yellow)] transition-all transform hover:-translate-y-0.5 min-h-[48px] text-center"
                 >
                   <Download className="w-4 h-4 text-[var(--text-dark)] flex-shrink-0" />
-                  <span>Get Free Follow-Up Tracker</span>
+                  <span>Claim Free Toolkit on Gumroad ($0)</span>
                 </Link>
-                <span className="text-[11px] sm:text-xs text-[var(--text-muted)] text-center sm:text-left">
-                  Instant 1-Click Notion Duplication • 100% Free Forever
-                </span>
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-[#065F46] justify-center sm:justify-start">
+                  <ShieldCheck className="w-4 h-4 text-[#059669]" />
+                  <span>100% Free Forever &bull; Zero Credit Card</span>
+                </div>
               </div>
             </div>
 
-            {/* Right Column: Visual Product Preview */}
+            {/* Right Column: Visual Preview */}
             <div className="lg:col-span-5 relative flex items-center justify-center">
-              <div className="relative w-full max-w-[280px] sm:max-w-[380px] lg:max-w-[400px] rounded-2xl overflow-hidden bg-white border border-[var(--border-color)] shadow-[var(--shadow-lg)] group mx-auto">
+              <div className="relative w-full max-w-[340px] sm:max-w-[400px] rounded-3xl overflow-hidden bg-white border border-[var(--border-color)] shadow-[var(--shadow-lg)] group mx-auto">
                 <div className="aspect-[4/3] overflow-hidden bg-[#F6F3EB]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <picture>
@@ -99,7 +104,7 @@ export default function FeaturedFreebie() {
                     />
                     <img
                       src="/images/guides/freelancer-follow-up-tracker-notion-system.jpg"
-                      alt="Freelancer Follow-Up Tracker Notion Workspace Template Lead Pipeline Mockup"
+                      alt="The Freelancer Follow-Up Tracker Notion workspace dashboard and lead pipeline"
                       width={400}
                       height={300}
                       loading="lazy"
@@ -107,18 +112,18 @@ export default function FeaturedFreebie() {
                     />
                   </picture>
                 </div>
-                <div className="p-3.5 sm:p-4 bg-white border-t border-[var(--border-color)] flex items-center justify-between">
-                  <div className="min-w-0 pr-2">
-                    <span className="text-xs font-bold text-[var(--text-dark)] block truncate">
-                      Freelancer Follow-Up Tracker
+                <div className="p-4 bg-white border-t border-[var(--border-color)] space-y-1 text-left">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-[var(--text-dark)]">
+                      Solo Operator Starter Pack
                     </span>
-                    <span className="text-[10px] sm:text-[11px] text-[var(--text-muted)] block truncate">
-                      Official Notion Workspace Template
+                    <span className="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-[#ECFDF5] text-[#065F46]">
+                      Free $0
                     </span>
                   </div>
-                  <span className="text-[11px] sm:text-xs font-extrabold px-2.5 py-0.5 rounded-full bg-[var(--color-success-bg)] text-[var(--color-success)] flex-shrink-0">
-                    Free Access
-                  </span>
+                  <p className="text-[11px] text-[var(--text-muted)]">
+                    Duplicate straight into Notion with 1 click. Fully customizable.
+                  </p>
                 </div>
               </div>
             </div>
