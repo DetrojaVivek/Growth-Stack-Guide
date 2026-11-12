@@ -50,6 +50,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+    other: {
+      'p:domain_verify': '45f8a4001b44ef59618dfd8523bb46a0',
+    },
   },
   icons: {
     icon: [
