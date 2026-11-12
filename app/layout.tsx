@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import GoogleTagManager from '@/components/GoogleTagManager';
 import './globals.css';
 
 const jakarta = Plus_Jakarta_Sans({
@@ -88,6 +89,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jakarta.variable} ${inter.variable} scroll-smooth`}>
       <body className="min-h-screen bg-[var(--bg-main)] text-[var(--text-dark)] antialiased font-sans flex flex-col">
+        {/* Google Tag Manager */}
+        <GoogleTagManager />
+
         {/* Google Analytics 4 Script */}
         <GoogleAnalytics />
 
